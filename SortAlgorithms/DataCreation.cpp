@@ -28,6 +28,16 @@ DataCreation::DataCreation(int lenght, int min, int max)
 	this->data = randomMass(lenght, min, max);
 }
 
+int DataCreation::getLenght() const
+{
+	return this->lenght;
+}
+
+int* DataCreation::getData() const 
+{
+	return this->data;
+}
+
 void DataCreation::print()
 {
 	for (int i = 0; i < this->lenght; i++) {
