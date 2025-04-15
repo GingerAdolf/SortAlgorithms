@@ -7,14 +7,16 @@ using namespace std;
 int main() {
 	
 
-	DataCreation data(10, 1, 10);
+	DataCreation data(100, 1, 100);
 	data.print();
 	
 	BubbleSort bubbleSort(data.getData(), data.getLenght());
 	bubbleSort.sort();
+	cout << bubbleSort.getTime() << endl;
 
 	DataCreation dataResult(bubbleSort.getLenght(), bubbleSort.getMass());
 	dataResult.print();
+
 
 	
 

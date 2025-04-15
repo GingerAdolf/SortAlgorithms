@@ -3,7 +3,7 @@ class BubbleSort
 {
 private:
 	int* mass = nullptr;
-	int lenght;
+	int lenght = 0;
 	double time = 0;
 	void swap(int index1, int index2);
 
@@ -14,7 +14,7 @@ public:
 	
 	int* getMass() const;
 	int getLenght() const;
-
+	double getTime() const;
 
 	~BubbleSort();
 	

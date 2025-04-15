@@ -1,6 +1,8 @@
 #include "BubbleSort.h"
 #include <iostream>
 
+#include <time.h>
+
 
 void BubbleSort::swap(int index1, int index2)
 {
@@ -21,8 +23,9 @@ BubbleSort::BubbleSort(const int* mass, const int lenght)
 
 void BubbleSort::sort()
 {
+	clock_t start, end;
+	start = clock();
 	bool flag = false;
-	
 	while (!flag) {
 		for (int i = 0; i < this->lenght - 1; i++) {
 			if (mass[i] > mass[i + 1]) {
@@ -36,8 +39,9 @@ void BubbleSort::sort()
 			}
 			flag = true;
 		}
-		
 	}
+	end = clock();
+	this->time = (double)(end - start)/ (double)CLOCKS_PER_SEC;
 }
 
 int* BubbleSort::getMass() const
@@ -48,6 +52,11 @@ int* BubbleSort::getMass() const
 int BubbleSort::getLenght() const
 {
 	return this->lenght;
+}
+
+double BubbleSort::getTime() const
+{
+	return this->time;
 }
 
 
