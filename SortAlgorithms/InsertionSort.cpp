@@ -20,11 +20,14 @@ InsertionSort::InsertionSort(const int* mass, const int lenght)
 
 void InsertionSort::sort()
 {
-	if (this->mass[1] < this->mass[0]) {
-		swap(0, 1);
-	}
 	for (int i = 1; i < this->lenght; i++) {
-		
+		int key = this->mass[i];
+		int j = i - 1;
+		while (j >= 0 && this->mass[j] > key) {
+			this->mass[j + 1] = this->mass[j];
+			j = j - 1;
+		}
+		mass[j + 1] = key;
 	}
 }
 
