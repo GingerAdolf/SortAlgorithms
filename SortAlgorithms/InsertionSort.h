@@ -6,7 +6,7 @@ private:
 	int lenght = 0;
 	double time = 0;
 
-	void swap(int index1, int index2);
+	
 public:
 	InsertionSort(const int* mass, const int lenght);
 

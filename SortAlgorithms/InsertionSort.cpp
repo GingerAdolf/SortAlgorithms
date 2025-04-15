@@ -2,13 +2,6 @@
 #include <iostream>
 #include <time.h>
 
-void InsertionSort::swap(int index1, int index2)
-{
-	int a = this->mass[index1];
-	this->mass[index1] = this->mass[index2];
-	this->mass[index2] = a;
-}
-
 InsertionSort::InsertionSort(const int* mass, const int lenght)
 {
 	this->lenght = lenght;
