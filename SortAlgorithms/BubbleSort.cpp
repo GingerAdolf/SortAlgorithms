@@ -1,6 +1,7 @@
 #include "BubbleSort.h"
 #include <iostream>
 
+
 void BubbleSort::swap(int index1, int index2)
 {
 	int a = this->mass[index1];
@@ -10,9 +11,9 @@ void BubbleSort::swap(int index1, int index2)
 
 BubbleSort::BubbleSort(const int* mass, const int lenght)
 {
-	this->linght = lenght;
-	this->mass = new int(lenght);
-	for (int i = 0; i < this->linght; i++) {
+	this->lenght = lenght;
+	this->mass = new int[lenght] {0};
+	for (int i = 0; i < this->lenght; i++) {
 		this->mass[i] = mass[i];
 	}
 	
@@ -21,14 +22,14 @@ BubbleSort::BubbleSort(const int* mass, const int lenght)
 void BubbleSort::sort()
 {
 	bool flag = false;
+	
 	while (!flag) {
-		for (int i = 0; i < this->linght - 1; i++) {
+		for (int i = 0; i < this->lenght - 1; i++) {
 			if (mass[i] > mass[i + 1]) {
 				swap(i, i + 1);
-
 			}
 		}
-		for (int i = 0; i < this->linght - 1; i++) {
+		for (int i = 0; i < this->lenght - 1; i++) {
 			if (mass[i] > mass[i + 1]) {
 				flag = false;
 				break;
@@ -36,14 +37,22 @@ void BubbleSort::sort()
 			flag = true;
 		}
 		
-
-		for (int i = 0; i < this->linght; i++) {
-			std::cout << this->mass[i] << " ";
-			
-		}
-		std::cout << std::endl;
 	}
-	
-	
-	
+}
+
+int* BubbleSort::getMass() const
+{
+	return this->mass;
+}
+
+int BubbleSort::getLenght() const
+{
+	return this->lenght;
+}
+
+
+BubbleSort::~BubbleSort()
+{
+	delete[] this->mass;
+	this->lenght = 0;
 }

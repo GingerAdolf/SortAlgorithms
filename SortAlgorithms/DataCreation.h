@@ -9,9 +9,12 @@ private:
 public:
 	DataCreation(int lenght);								//binar mass
 	DataCreation(int lenght, int min, int max);				//all type mass
+	DataCreation(const int lenght, const int* mass);
 
 	int getLenght() const;
 	int* getData() const;
 	void print();
+
+	~DataCreation();
 };
 

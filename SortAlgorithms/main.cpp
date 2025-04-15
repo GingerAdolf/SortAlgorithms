@@ -12,7 +12,11 @@ int main() {
 	
 	BubbleSort bubbleSort(data.getData(), data.getLenght());
 	bubbleSort.sort();
-	data.print();
+
+	DataCreation dataResult(bubbleSort.getLenght(), bubbleSort.getMass());
+	dataResult.print();
+
+	
 
 
 
