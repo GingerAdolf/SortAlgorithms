@@ -13,6 +13,8 @@ InsertionSort::InsertionSort(const int* mass, const int lenght)
 
 void InsertionSort::sort()
 {
+	clock_t start, end;
+	start = clock();
 	for (int i = 1; i < this->lenght; i++) {
 		int key = this->mass[i];
 		int j = i - 1;
@@ -22,6 +24,8 @@ void InsertionSort::sort()
 		}
 		mass[j + 1] = key;
 	}
+	end = clock();
+	this->time = (double)(end - start) / (double)CLOCKS_PER_SEC;
 }
 
 int* InsertionSort::getMass() const

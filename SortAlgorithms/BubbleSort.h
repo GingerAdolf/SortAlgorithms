@@ -16,6 +16,7 @@ public:
 	int getLenght() const;
 	double getTime() const;
 
+
 	~BubbleSort();
 	
 };

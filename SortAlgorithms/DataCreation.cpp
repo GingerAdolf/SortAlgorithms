@@ -62,3 +62,13 @@ DataCreation::~DataCreation()
 	lenght = 0;
 }
 
+bool operator==(const DataCreation &d1, const DataCreation &d2)
+{
+	if (d1.getLenght() != d2.getLenght()) return false;
+	for (int i = 0; i < d1.getLenght(); i++) {
+		if (d1.getData()[i] != d2.getData()[i]) {
+			return false;
+		}
+	}
+	return true;
+}

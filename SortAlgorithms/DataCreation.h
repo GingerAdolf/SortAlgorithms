@@ -15,6 +15,9 @@ public:
 	int* getData() const;
 	void print();
 
+
+	friend bool operator == (const DataCreation &d1, const DataCreation &d2);
+
 	~DataCreation();
 };
 
